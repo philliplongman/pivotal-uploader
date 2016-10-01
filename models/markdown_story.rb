@@ -41,8 +41,8 @@ class MarkdownStory
       when /^# /
         @name = line.chomp.gsub("# ", "")
         @story_type = parse_name
-      when /^Tags: /
-        @labels = line.chomp.gsub("Tags: ", "").split(', ')
+      when /^Labels: /
+        @labels = line.chomp.gsub("Labels: ", "").split(', ')
       when /^- /
         @tasks << line.chomp.gsub("- ", "")
       else
