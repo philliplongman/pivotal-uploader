@@ -5,5 +5,4 @@ ruby "2.3.1"
 gem "bundler"
 gem "pivotal-tracker"
 gem "dotenv"
-
-gem "pry"
+gem "thor"
