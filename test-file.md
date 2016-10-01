@@ -1,6 +1,7 @@
 Project: 1883123
 
-# Test Story 1
+
+# Test Story 1 (bug)
 
 As a product manager,
 I want to write user stories in markdown and upload them to Pivotal Tracker,
@@ -16,8 +17,7 @@ Tags: Enterprise, Action Plan
 - Tasks should appear at the end as a hyphen bullet point.
 - Each bullet point should be a new task.
 
+
 # Test Story 2 (chore)
 
-As a test story,
-I want to be registered as a separate story without all the bells and whistles,
-so that we know the app is working.
+This is a chore, and isn't written with all those bells and whistles.

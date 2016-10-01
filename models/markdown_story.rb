@@ -1,19 +1,18 @@
 class MarkdownStory
 
-  attr_reader :project, :name, :description, :labels, :tasks
-
   def initialize(project_id, markdown_block="")
+    @name, @description, @labels, @tasks = "", "", [], []
+
     @project = PivotalTracker::Project.find(project_id)
-    @name = "Taco"
-    @description = ""
-    @labels = []
-    @tasks = []
+
     parse_block markdown_block
+
   end
 
   def upload
     story = project.stories.create(
       name:         name,
+      story_type:   story_type,
       description:  description,
       labels:       labels.join(", ")
     )
@@ -34,18 +33,32 @@ class MarkdownStory
 
   private
 
-  attr_writer :name, :description, :labels, :tasks
+  attr_accessor :project, :name, :story_type, :description, :labels, :tasks
 
   def parse_block(markdown_block)
     markdown_block.each_line do |line|
       case line
-      when /^# /      then @name = line.chomp.gsub("# ", "")
-      when /^Tags: /  then @labels = line.chomp.gsub("Tags: ", "").split(', ')
-      when /^- /      then @tasks << line.chomp.gsub("- ", "")
-      else @description << line
+      when /^# /
+        @name = line.chomp.gsub("# ", "")
+        @story_type = parse_name
+      when /^Tags: /
+        @labels = line.chomp.gsub("Tags: ", "").split(', ')
+      when /^- /
+        @tasks << line.chomp.gsub("- ", "")
+      else
+        @description << line
       end
     end
     description.strip!
+  end
+
+  def parse_name
+    case name
+    when /\(feature\)$/, /\(chore\)$/, /\(bug\)$/
+      name.slice!(/ \(.+\)$/).gsub(" (", "").gsub(")", "")
+    else
+      "feature"
+    end
   end
 
 end
