@@ -2,6 +2,10 @@
 require "bundler/setup"
 Bundler.require
 Dotenv.load
-Dir.glob("./models/*", &method(:require))
+Dir.glob "./models/*", &method(:require)
 
-stories = MarkdownStory.parse "test-file.md"
+PivotalTracker::Client.token = ENV["API_TOKEN"]
+
+file = "test-file.md"
+
+MarkdownStory.parse(file).each(&:upload)

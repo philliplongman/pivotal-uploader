@@ -1,4 +1,4 @@
-Project: 932955
+Project: 1883123
 
 # Test Story 1
 
@@ -16,7 +16,7 @@ Tags: Enterprise, Action Plan
 - Tasks should appear at the end as a hyphen bullet point.
 - Each bullet point should be a new task.
 
-# Test Story 2
+# Test Story 2 (chore)
 
 As a test story,
 I want to be registered as a separate story without all the bells and whistles,
