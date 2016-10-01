@@ -1,16 +1,16 @@
 Project: 1883123
 
 
-# Test Story 1 (bug)
+# Test Story 1
 
 As a product manager,
 I want to write user stories in markdown and upload them to Pivotal Tracker,
 so that I can do less work setting them up.
 
 Notes:
-* Asterisk bullet points would be ignored as part of the description.
+* Asterisk bullet points should be ignored as part of the description.
 
-Tags: Enterprise, Action Plan
+Tags: Example tag, Another example tag
 
 - Every # header should begin a new story.
 - Tags should be prefixed by 'Tags:' and be comma seperated.
