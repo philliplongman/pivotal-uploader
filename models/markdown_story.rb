@@ -2,7 +2,8 @@ class MarkdownStory
 
   attr_reader :title, :description, :tags, :tasks
 
-  def initialize(markdown_block="")
+  def initialize(project, markdown_block="")
+    @project = project
     @title = ""
     @description = ""
     @tags = []
@@ -12,7 +13,14 @@ class MarkdownStory
 
   def self.parse(markdown_file)
     story_blocks = File.read(markdown_file).split(/^(?=[#])/)
-    story_blocks.map { |block| MarkdownStory.new(block) }
+
+    project = if story_blocks.first.start_with? "Project:"
+      story_blocks.shift.match(/\d+/).to_s
+    else
+      ENV["DEFAULT_PROJECT"]
+    end
+
+    story_blocks.map { |block| MarkdownStory.new(project, block) }
   end
 
   private
