@@ -13,7 +13,7 @@ Notes:
 Tags: Example tag, Another example tag
 
 - Every # header should begin a new story.
-- Tags should be prefixed by 'Tags:' and be comma seperated.
+- Tags should be prefixed by 'Tags:' and be comma separated.
 - Tasks should appear at the end as a hyphen bullet point.
 - Each bullet point should be a new task.
 
