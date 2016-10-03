@@ -2,11 +2,8 @@ class MarkdownStory
 
   def initialize(project_id, markdown_block="")
     @name, @description, @labels, @tasks = "", "", [], []
-
     @project = PivotalTracker::Project.find(project_id)
-
     parse_block markdown_block
-
   end
 
   def upload

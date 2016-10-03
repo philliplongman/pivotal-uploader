@@ -1,7 +1,7 @@
 Project: 1883123
 
 
-# Test Feature
+# Example feature
 
 As a product manager,
 I want to write user stories in markdown and upload them to Pivotal Tracker,
@@ -13,20 +13,18 @@ Notes:
 Labels: example feature, pretend label
 
 - Every # header should begin a new story.
-- Tags should be prefixed by 'Tags:' and be comma separated.
+- Labels should be prefixed by 'Labels:' and be comma-separated.
 - Tasks should appear at the end as a hyphen bullet point.
-- Each bullet point should be a new task.
+- Story type should be at the end of the story name.
 
 
-
-# Test Bug (bug)
+# Example bug (bug)
 
 This is a bug. Something is wrong with the example feature. This story has a label.
 
 Labels: example feature
 
 
-
-# Test Chore (chore)
+# Example chore (chore)
 
 This is a chore, and isn't written with all those bells and whistles.

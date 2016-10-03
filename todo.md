@@ -1,0 +1,8 @@
+- Make sure assigning to existing epics works.
+- Add tests.
+- Add a readme.
+- Explore a substitute for dotenv.
+- Turn into a gem.
+- Make it work from any folder if turning it into a gem didn't work.
+- Allow uploading to backlog.
+- Allow epic creation.
