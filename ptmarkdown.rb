@@ -17,7 +17,7 @@ class PTMarkdown < Thor
     file = file_arg.dup
     file << ".md" unless file.end_with? ".md"
 
-    MarkdownStory.parse(file).each(&:upload)
+    MarkdownStory.parse_file(file).each(&:upload)
   end
 end
 

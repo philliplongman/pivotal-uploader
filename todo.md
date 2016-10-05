@@ -1,4 +1,5 @@
-- Make sure assigning to existing epics works.
+- Error handling for empty file
+- Error handling
 - Add tests.
 - Add a readme.
 - Explore a substitute for dotenv.

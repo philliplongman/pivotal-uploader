@@ -16,8 +16,8 @@ class MarkdownStory
     tasks.each { |task| story.tasks.create(description: task) }
   end
 
-  def self.parse(markdown_file)
-    story_blocks = File.read(markdown_file).split(/^(?=[#])/)
+  def self.parse(markdown_text)
+    story_blocks = markdown_text.split(/^(?=[#])/)
 
     project_id = if story_blocks.first.start_with? "Project:"
       story_blocks.shift.match(/\d+/).to_s
@@ -26,6 +26,10 @@ class MarkdownStory
     end
 
     story_blocks.map { |block| MarkdownStory.new(project_id, block) }
+  end
+
+  def self.parse_file(markdown_file)
+    parse File.read(markdown_file)
   end
 
   private
