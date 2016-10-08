@@ -1,3 +1,4 @@
+- Reverse the load order so the first story comes out on top, not bottom.
 - Error handling for empty file
 - Error handling
 - Add tests.

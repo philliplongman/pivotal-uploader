@@ -3,6 +3,7 @@ require "bundler"
 require "pivotal-tracker"
 require "dotenv"
 require "thor"
+require "pry"
 
 require_relative "models/markdown_story"
 
